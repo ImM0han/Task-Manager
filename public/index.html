@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Pro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Auth Container - Split Screen Design -->
+    <div id="auth-container" class="auth-container">
+        <!-- Animated Background -->
+        <div class="auth-background">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        
+        <div class="auth-wrapper">
+            <!-- Left Side - Branding -->
+            <div class="auth-branding">
+                <div class="branding-content">
+                    <div class="logo-3d">
+                        <div class="logo-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h1>Task Manager Pro</h1>
+                    </div>
+                    <p class="tagline">Organize your work,<br>simplify your life</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Lightning Fast</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure & Private</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sync"></i>
+                            <span>Real-time Sync</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="3d-showcase">
+                    <div class="card-stack">
+                        <div class="showcase-card card-1">
+                            <i class="fas fa-tasks"></i>
+                            <span>Manage Tasks</span>
+                        </div>
+                        <div class="showcase-card card-2">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Track Progress</span>
+                        </div>
+                        <div class="showcase-card card-3">
+                            <i class="fas fa-users"></i>
+                            <span>Collaborate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Side - Forms -->
+            <div class="auth-forms-container">
+                <div class="forms-wrapper">
+                    <!-- Login Form -->
+                    <form id="login-form" class="auth-form-3d">
+                        <div class="form-header">
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to continue your journey</p>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="login-username" required placeholder="Username">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" required placeholder="Password">
+                                <button type="button" class="toggle-password" data-target="login-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-options-3d">
+                            <label class="checkbox-3d">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" id="show-forgot-password" class="link-3d">Forgot password?</a>
+                        </div>
+                        
+                        <button type="submit" class="btn-3d btn-primary-3d">
+                            <span>Sign In</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" id="show-register" class="link-3d">Create one</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Register Form -->
+                    <form id="register-form" class="auth-form-3d hidden">
+                        <div class="form-header">
+                            <h2>Create Account</h2>
+                            <p>Join thousands of productive users</p>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="register-username" required placeholder="Username" minlength="3">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="register-email" required placeholder="Email">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-password" required placeholder="Password" minlength="6">
+                                <button type="button" class="toggle-password" data-target="register-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-3d btn-primary-3d">
+                            <span>Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" id="show-login" class="link-3d">Sign In</a></p>
+                        </div>
+                    </form>
+                    
+                    <!-- Forgot Password Form -->
+                    <form id="forgot-password-form" class="auth-form-3d hidden">
+                        <div class="form-header">
+                            <h2>Reset Password</h2>
+                            <p>Enter your email to receive reset instructions</p>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="input-field">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="forgot-email" required placeholder="Email">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-3d btn-primary-3d">
+                            <span>Send Reset Link</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        
+                        <div class="form-footer">
+                            <p>Remember your password? <a href="#" id="show-login-from-forgot" class="link-3d">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div id="app-container" class="app-container hidden">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-check-double"></i>
+                    <span>Task Manager</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    <span>All Tasks</span>
+                    <span class="badge" id="nav-all">0</span>
+                </a>
+                <a href="#" class="nav-item" data-filter="pending">
+                    <i class="fas fa-clock"></i>
+                    <span>Pending</span>
+                    <span class="badge" id="nav-pending">0</span>
+                </a>
+                <a href="#" class="nav-item" data-filter="in-progress">
+                    <i class="fas fa-spinner"></i>
+                    <span>In Progress</span>
+                    <span class="badge" id="nav-in-progress">0</span>
+                </a>
+                <a href="#" class="nav-item" data-filter="completed">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Completed</span>
+                    <span class="badge" id="nav-completed">0</span>
+                </a>
+                <a href="#" class="nav-item" data-filter="high">
+                    <i class="fas fa-flag"></i>
+                    <span>High Priority</span>
+                    <span class="badge" id="nav-high">0</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="user-name">User</span>
+                </div>
+                <button id="logout-btn" class="btn btn-icon" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button id="mobile-menu-toggle" class="btn btn-icon mobile-only">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="page-title">All Tasks</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search tasks...">
+                    </div>
+                    <button id="add-task-btn" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> New Task
+                    </button>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-total">0</span>
+                            <span class="stat-label">Total Tasks</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-pending">0</span>
+                            <span class="stat-label">Pending</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card">
+                        <div class="stat-icon progress">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-in-progress">0</span>
+                            <span class="stat-label">In Progress</span>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon completed">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="stat-completed">0</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters Bar -->
+            <section class="filters-section">
+                <div class="filters-left">
+                    <select id="filter-status" class="filter-select">
+                        <option value="">All Status</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                    <select id="filter-priority" class="filter-select">
+                        <option value="">All Priorities</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <select id="sort-by" class="filter-select">
+                        <option value="created_at">Sort by Date</option>
+                        <option value="priority">Sort by Priority</option>
+                        <option value="title">Sort by Title</option>
+                        <option value="due_date">Sort by Due Date</option>
+                    </select>
+                </div>
+                <div class="filters-right">
+                    <span id="tasks-count">0 tasks</span>
+                </div>
+            </section>
+
+            <!-- Tasks List -->
+            <section class="tasks-section">
+                <div id="tasks-list" class="tasks-list">
+                    <!-- Tasks will be rendered here -->
+                </div>
+                <div id="empty-state" class="empty-state hidden">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>No tasks found</h3>
+                    <p>Create your first task to get started</p>
+                </div>
+            </section>
+
+            <!-- Pagination -->
+            <section class="pagination-section">
+                <div id="pagination" class="pagination">
+                    <!-- Pagination will be rendered here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Task Modal -->
+    <div id="task-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">New Task</h2>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="task-form" class="modal-body">
+                <input type="hidden" id="task-id">
+                <div class="form-group">
+                    <label for="task-title">Title *</label>
+                    <input type="text" id="task-title" required maxlength="100" placeholder="Enter task title">
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description</label>
+                    <textarea id="task-description" rows="3" maxlength="500" placeholder="Enter task description (optional)"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-status">Status</label>
+                        <select id="task-status">
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="task-due-date">Due Date</label>
+                    <input type="date" id="task-due-date">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-task">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Task
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div id="delete-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Delete Task</h2>
+                <button class="modal-close" id="delete-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="confirm-message">Are you sure you want to delete this task? This action cannot be undone.</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel-delete">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirm-delete">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
